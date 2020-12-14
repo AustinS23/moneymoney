@@ -31,13 +31,11 @@ const getNumberInEnglish = (num, unit) => {
 
 const getDollorsInEnglish = (value) => {
     if (isNaN(value)) {
-        console.error('Please input a valid number');
-        return;
+        throw new Error('Please input a valid number');
     }
 
     if (value < 0 || value > 1000) {
-        console.error('Please input a number between 0 to 1000.');
-        return;
+        throw new Error('Please input a number between 0 to 1000.');
     }
 
     value = +value.toFixed(2);
